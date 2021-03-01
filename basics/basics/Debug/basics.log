@@ -1,5 +1,6 @@
-﻿  basics.cpp
-c:\users\victor\documents\mooc\projectranc\basics\basics\basics.cpp(31): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  c:\program files (x86)\windows kits\10\include\10.0.14393.0\ucrt\stdio.h(1269): note: voir la déclaration de 'scanf'
-  basics.vcxproj -> C:\Users\Victor\Documents\MOOC\projectRanC\basics\Debug\basics.exe
-  basics.vcxproj -> C:\Users\Victor\Documents\MOOC\projectRanC\basics\Debug\basics.pdb (Partial PDB)
+﻿  stdafx.cpp
+  basics.cpp
+D:\Victor\Documents\MOOC\projectRanC\basics\basics\basics.cpp(45,23): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+D:\Victor\Documents\MOOC\projectRanC\basics\basics\basics.cpp(55,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Victor\Documents\MOOC\projectRanC\basics\basics\basics.cpp(73,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  basics.vcxproj -> D:\Victor\Documents\MOOC\projectRanC\basics\Debug\basics.exe

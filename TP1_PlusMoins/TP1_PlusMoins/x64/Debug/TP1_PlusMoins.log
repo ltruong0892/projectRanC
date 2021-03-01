@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  TP1_PlusMoins.cpp
+D:\Victor\Documents\MOOC\projectRanC\TP1_PlusMoins\TP1_PlusMoins\TP1_PlusMoins.cpp(15,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+D:\Victor\Documents\MOOC\projectRanC\TP1_PlusMoins\TP1_PlusMoins\TP1_PlusMoins.cpp(28,3): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  TP1_PlusMoins.vcxproj -> D:\Victor\Documents\MOOC\projectRanC\TP1_PlusMoins\x64\Debug\TP1_PlusMoins.exe
