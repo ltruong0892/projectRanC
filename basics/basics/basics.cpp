@@ -24,6 +24,9 @@ int triple(int nombre);
 int incrementeur();
 void triplePointeur(int* pointeurSurNombre);
 void decoupeMinutes(int *h, int *m);
+void affiche(int* tableau, int tailleTableau);
+void tableaux();
+int sommeTableau(int tableau[], int tailleTableau);
 
 // Variable global (déconseillé)
 int globalTest = 0;
@@ -88,7 +91,9 @@ int main(int argc, char *argv[])
 	decoupeMinutes(&heures, &minutes);
 
 	// Cette fois les valeurs ont été modifiées
-	printf("%d heures et %d minutes", heures, minutes);
+	printf("%d heures et %d minutes\n", heures, minutes);
+
+	tableaux();
 
 	return 0;
 }
@@ -206,4 +211,52 @@ void decoupeMinutes(int *h, int *m)
 	n'est-ce pas ?) */
 	*h = *m / 60;
 	*m = *m % 60;
+}
+
+
+void tableaux()
+{
+	int tableau[4] = { 10,20,30,40 }; // tableau initialisé avec des 0
+	int tableau2[5] = { 10,20 }; // on initialise les deux 1eres cases et les autres sont automatiquement mises à 0
+	int tableau3[4] = { 0 }; // tout est initialisé à 0
+	
+	// accès par les indices
+	tableau[0] = 10;
+	tableau[1] = 23;
+	tableau[2] = 505;
+	tableau[3] = 8;
+
+	// "tableau" c'est en fait un pointeur vers la 1ere case, donc on peut utiliser les pointeurs pour récupere la 1ere valeure
+	printf("1ere valeure du tableau : %d\n", *tableau);
+
+	int case2 = tableau[1]; // Renvoie la valeur de la seconde case (la première case étant 0)
+	int case2b = *(tableau + 1); // Identique : renvoie la valeur contenue dans la seconde case
+
+	int sumTab = sommeTableau(tableau, 4);
+	printf("somme tu tableau : %d\n", sumTab);
+
+	// tableau à taille dynamique
+	int taille = 5;
+	//int tableauDyn[taille]; // pas reconnu par tous les compilateurs
+}
+
+void affiche(int* tableau, int tailleTableau)
+{
+	// Parcourir un tableau et l'afficher
+	int i;
+	for (i = 0; i < tailleTableau; i++)
+	{
+		printf("%d\n", tableau[i]);
+	}
+}
+
+int sommeTableau(int tableau[], int tailleTableau) // méthode alternative pour passer un tableau en argument de fonction
+{
+	int i;
+	int cpt = 0;
+	for (i = 0; i < tailleTableau; i++)
+	{
+		cpt += tableau[i];
+	}
+	return cpt;
 }
