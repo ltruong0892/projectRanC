@@ -9,13 +9,24 @@ Grâce à ces bibliothèques, on disposera de fonctions toutes prêtes pour afficher
 par exemple un message à l'écran.
 */
 
-#include "stdafx.h"
-#include <stdio.h>
+#include "stdafx.h" // " " -> répertoire local
+#include <stdio.h> // < > -> bibliothèque du répertoire de l'IDE
 #include <stdlib.h>
 #include <math.h>
 
 
-void testwhile();
+
+// Prototypes des fonctions du code
+void test_boucle();
+int addition(int nbr1, int nbr2);
+double division(int nbr1, int nbr2);
+int triple(int nombre);
+int incrementeur();
+void triplePointeur(int* pointeurSurNombre);
+void decoupeMinutes(int *h, int *m);
+
+// Variable global (déconseillé)
+int globalTest = 0;
 
 /*
 Ci-dessous, vous avez la fonction principale du programme, appelée main.
@@ -30,8 +41,8 @@ int main(int argc, char *argv[])
 	int nbr1 = 5, nbr2 = 3;
 	int resultat1, resultat3;
 	double resultat2;
-	resultat1 = nbr1 + nbr2;
-	resultat2 = nbr1 / nbr2;
+	resultat1 = addition(nbr1, nbr2);
+	resultat2 = division(nbr1, nbr2);
 	resultat3 = nbr1 % nbr2;
 	printf("Faisons quelques calculs ^^\n");
 	printf("%d + %d = %d \n", nbr1, nbr2, resultat1);
@@ -49,6 +60,52 @@ int main(int argc, char *argv[])
 
 	const int NBR_DE_VIES_INITIALES = 5;
 
+	int resultat4 = 0;
+	resultat4 = triple(nbr1);
+	printf("%d * 3 = %d\n", nbr1, resultat4);
+
+	test_boucle();
+
+	int* monPointeur = NULL;
+	int age = 10;
+	int* pointeurSurAge; // je crée un pointeur
+	pointeurSurAge = &age; // pointeurSurAge contient l'adresse de age
+	printf("%p\n", pointeurSurAge); // on regarde la valeur de pointeurSurAge donc l'adresse de age
+	printf("%d\n", *pointeurSurAge); // on regarde la valeur de la variable à l'adresse pointeurSurAge
+
+	triplePointeur(&age); // on envoie l'adresse de age à la fonction
+	printf("\nage apres triplePointeur : %d \n", age); // on affiche la variable age, la fonction a directement modifié la valeur de la variable car elle connait sont adresse
+	/* version alternative
+	* int age = 10;
+	* int *pointeur = &age;
+	* triplePointeur(pointeur);
+	* printf("%d", *pointeur);
+	*/
+
+	int heures = 0, minutes = 90;
+
+	// on envoie l'adresse de heures et minutes
+	decoupeMinutes(&heures, &minutes);
+
+	// Cette fois les valeurs ont été modifiées
+	printf("%d heures et %d minutes", heures, minutes);
+
+	return 0;
+}
+
+
+int addition(int nbr1, int nbr2)
+{
+	return nbr1 + nbr2;
+}
+
+double division(int nbr1, int nbr2)
+{
+	return nbr1 / nbr2;
+}
+
+void test_boucle()
+{
 	// boucle if
 	int age = 0;
 	printf("Quel age avez vous ? ");
@@ -113,14 +170,40 @@ int main(int argc, char *argv[])
 
 	// boucle for
 	compteur = 0;
-	for (compteur = 0;compteur < 5;compteur++)
+	for (compteur = 0; compteur < 5; compteur++)
 	{
 		printf("Salut les Zeros\n");
 	}
 
-
-	return 0;
 }
 
+int triple(int nombre)
+{
+	int resultat = 0;
+	resultat = 3 * nombre;
 
+	return resultat;
+}
 
+int incrementeur()
+{
+	static int nombre = 0; // La variable nombre est créée la première fois que la fonction est appelée
+
+	nombre++;
+	return nombre;
+} // La variable nombre n'est PAS supprimée lorsque la fonction est terminée.
+
+void triplePointeur(int* pointeurSurNombre)
+{
+	*pointeurSurNombre *= 3; // on multiplie la valeur par 3
+}
+
+void decoupeMinutes(int *h, int *m)
+{
+	/* Attention à ne pas oublier de mettre une étoile devant le nom
+	des pointeurs ! Comme ça, vous pouvez modifier la valeur des variables,
+	et non leur adresse ! Vous ne voudriez pas diviser des adresses,
+	n'est-ce pas ?) */
+	*h = *m / 60;
+	*m = *m % 60;
+}
