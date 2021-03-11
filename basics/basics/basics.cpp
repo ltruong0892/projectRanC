@@ -13,6 +13,7 @@ par exemple un message à l'écran.
 #include <stdio.h> // < > -> bibliothèque du répertoire de l'IDE
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 
 
 
@@ -27,6 +28,8 @@ void decoupeMinutes(int *h, int *m);
 void affiche(int* tableau, int tailleTableau);
 void tableaux();
 int sommeTableau(int tableau[], int tailleTableau);
+void chaineCaract();
+void demandeNom();
 
 // Variable global (déconseillé)
 int globalTest = 0;
@@ -99,6 +102,8 @@ int main(int argc, char *argv[])
 }
 
 
+
+// Fonctions
 int addition(int nbr1, int nbr2)
 {
 	return nbr1 + nbr2;
@@ -109,6 +114,15 @@ double division(int nbr1, int nbr2)
 	return nbr1 / nbr2;
 }
 
+int triple(int nombre)
+{
+	int resultat = 0;
+	resultat = 3 * nombre;
+
+	return resultat;
+}
+
+// Boucles itératives
 void test_boucle()
 {
 	// boucle if
@@ -182,13 +196,6 @@ void test_boucle()
 
 }
 
-int triple(int nombre)
-{
-	int resultat = 0;
-	resultat = 3 * nombre;
-
-	return resultat;
-}
 
 int incrementeur()
 {
@@ -198,6 +205,8 @@ int incrementeur()
 	return nombre;
 } // La variable nombre n'est PAS supprimée lorsque la fonction est terminée.
 
+
+// Pointeurs
 void triplePointeur(int* pointeurSurNombre)
 {
 	*pointeurSurNombre *= 3; // on multiplie la valeur par 3
@@ -213,7 +222,7 @@ void decoupeMinutes(int *h, int *m)
 	*m = *m % 60;
 }
 
-
+// Tableaux
 void tableaux()
 {
 	int tableau[4] = { 10,20,30,40 }; // tableau initialisé avec des 0
@@ -259,4 +268,27 @@ int sommeTableau(int tableau[], int tailleTableau) // méthode alternative pour p
 		cpt += tableau[i];
 	}
 	return cpt;
+}
+
+
+// Chaines de caractère
+void chaineCaract()
+{
+	char lettre = 'A';
+	printf("%d\n", lettre); // on a le code ascii correspondant
+	printf("%c\n", lettre); // affiche la lettre
+	char chaine0[6]; // une chaine de caractère termine tjs par \0 à la fin (signifie la fin de la chaine pour le compilateur) donc il faut faire +1 à la taille
+	char chaine[] = "Salut"; // cette écriture ne marche que pour l'initialisation, après il faut faire caractère par caractère
+	printf("%s\n", chaine);
+	demandeNom();
+
+}
+
+void demandeNom()
+{
+	char prenom[100]; // on connait pas la taille alors on prend un truc grand
+	printf("Comment t'appelles-tu petite Zero ? \n");
+	scanf("%s", prenom);
+	printf("Salut %s, content de te rencontrer !\n", prenom);
+
 }
