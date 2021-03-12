@@ -30,6 +30,8 @@ void tableaux();
 int sommeTableau(int tableau[], int tailleTableau);
 void chaineCaract();
 void demandeNom();
+void copieChaine();
+void concatChaine();
 
 // Variable global (déconseillé)
 int globalTest = 0;
@@ -97,6 +99,7 @@ int main(int argc, char *argv[])
 	printf("%d heures et %d minutes\n", heures, minutes);
 
 	tableaux();
+	chaineCaract();
 
 	return 0;
 }
@@ -281,6 +284,18 @@ void chaineCaract()
 	char chaine[] = "Salut"; // cette écriture ne marche que pour l'initialisation, après il faut faire caractère par caractère
 	printf("%s\n", chaine);
 	demandeNom();
+	printf("Faisons une copie\n");
+	copieChaine();
+	concatChaine();
+
+	int age = 28;
+	char chaine1[100];
+	// On écrit "Tu as 28 ans" dans chaine
+	sprintf(chaine1, "Tu as %d ans !", age);
+
+	// On affiche chaine pour vérifier qu'elle contient bien cela :
+	printf("%s", chaine1);
+
 
 }
 
@@ -291,4 +306,79 @@ void demandeNom()
 	scanf("%s", prenom);
 	printf("Salut %s, content de te rencontrer !\n", prenom);
 
+	int longueurChaine = 0;
+	// On récupère la longueur du prénom et on l'affiche
+	longueurChaine = strlen(prenom);
+	printf("Votre prenom a %d caracteres !\n", longueurChaine);
+
+	// Chercher un caractère
+	char* suiteChaine = NULL;
+	suiteChaine = strchr(prenom, 'V'); // renvoie l'adresse du premier caractère trouvé
+	if (suiteChaine != NULL)
+	{
+		printf("Et votre prenom contient la lettre V c'est cool !\n");
+	}
+	else
+	{
+		printf("Dommage, votre prenom n'a pas la lettre V\n");
+	}
+
+
+}
+
+void copieChaine()
+{
+	char chaine[] = "Texte";
+	char copie[100] = { 0 };
+	strcpy(copie, chaine); // on copie "chaine" dans "copie"
+	// Si tout s'est bien passé, la copie devrait être identique à chaine
+	printf("chaine vaut : %s\n", chaine);
+	printf("copie vaut : %s\n", copie);
+
+	// On vérifie si c'est les mêmes chaines
+	if (strcmp(chaine, copie) == 0) // si c'est les même chaines
+	{
+		printf("Les chaines sont identiques.\n");
+	}
+	else
+	{
+		printf("Les chaines sont différentes.\n");
+	}
+
+
+}
+
+void concatChaine()
+{
+	/* On crée 2 chaînes. chaine1 doit être assez grande pour accueillir
+	le contenu de chaine2 en plus, sinon risque de plantage */
+	char chaine1[100] = "Salut ", chaine2[] = "Mateo21";
+	strcat(chaine1, chaine2); // On concatène chaine2 dans chaine1
+
+	// Si tout s'est bien passé, chaine1 vaut "Salut Mateo21"
+	printf("chaine1 vaut : %s\n", chaine1);
+	// chaine2 n'a pas changé :
+	printf("chaine2 vaut toujours : %s\n", chaine2);
+}
+
+void chercheChaine()
+{
+	//// chercher 1er caractère d'une liste
+	char* suiteChaine;
+
+	// On cherche la première occurrence de x, d ou s dans "Texte de test" 
+	suiteChaine = strpbrk("Texte de test", "xds");
+	if (suiteChaine != NULL)
+	{
+		printf("Voici la fin de la chaine a partir du premier des caracteres trouves : %s", suiteChaine);
+	}
+
+	//// chercher une chaine dans une chaine
+	char* suiteChaine2;
+	// On cherche la première occurrence de "test" dans "Texte de test" :
+	suiteChaine2 = strstr("Texte de test", "test");
+	if (suiteChaine2 != NULL)
+	{
+		printf("Premiere occurrence de test dans Texte de test : %s\n", suiteChaine2);
+	}
 }
