@@ -17,24 +17,16 @@ par exemple un message à l'écran.
 
 
 
-// Prototypes des fonctions du code
-void test_boucle();
-int addition(int nbr1, int nbr2);
-double division(int nbr1, int nbr2);
-int triple(int nombre);
-int incrementeur();
-void triplePointeur(int* pointeurSurNombre);
-void decoupeMinutes(int *h, int *m);
-void affiche(int* tableau, int tailleTableau);
-void tableaux();
-int sommeTableau(int tableau[], int tailleTableau);
-void chaineCaract();
-void demandeNom();
-void copieChaine();
-void concatChaine();
+// Fichier header
+#include "basics.h"
 
 // Variable global (déconseillé)
 int globalTest = 0;
+
+
+
+
+
 
 /*
 Ci-dessous, vous avez la fonction principale du programme, appelée main.
@@ -100,6 +92,10 @@ int main(int argc, char *argv[])
 
 	tableaux();
 	chaineCaract();
+
+	RACONTER_SA_VIE()
+
+	MAJEUR(22)
 
 	return 0;
 }
@@ -365,9 +361,10 @@ void chercheChaine()
 {
 	//// chercher 1er caractère d'une liste
 	char* suiteChaine;
-
+	char test0[] = "Texte de test";
+	char test1[] = "xds";
 	// On cherche la première occurrence de x, d ou s dans "Texte de test" 
-	suiteChaine = strpbrk("Texte de test", "xds");
+	suiteChaine = strpbrk(test0, test1);
 	if (suiteChaine != NULL)
 	{
 		printf("Voici la fin de la chaine a partir du premier des caracteres trouves : %s", suiteChaine);
@@ -375,8 +372,10 @@ void chercheChaine()
 
 	//// chercher une chaine dans une chaine
 	char* suiteChaine2;
+	
+	char test2[] = "test";
 	// On cherche la première occurrence de "test" dans "Texte de test" :
-	suiteChaine2 = strstr("Texte de test", "test");
+	suiteChaine2 = strstr(test0,test2);
 	if (suiteChaine2 != NULL)
 	{
 		printf("Premiere occurrence de test dans Texte de test : %s\n", suiteChaine2);
