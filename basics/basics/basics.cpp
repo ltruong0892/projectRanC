@@ -97,6 +97,31 @@ int main(int argc, char *argv[])
 
 	MAJEUR(22)
 
+	//struct Coordonnees point; // création d'une variable point de type Coordonnees, écriture normale mais un peu long car il faut mettre struct
+	Coordonnees point; // création d'une variable point de type Coordonnees via l'alias Coordonnees
+
+	point.x = 10;
+	point.y = 20;
+
+	// initialiser une structure
+	Coordonnees point2 = { 0,0 };
+	Personne utilisateur = { "","","",0,0 };
+
+	// pointeurs de structure
+	Coordonnees *point3a = NULL, *point3b = NULL;
+	Coordonnees monPoint;
+	initialiserCoordonnees(&monPoint);
+
+	// enumérations
+	Volume musique = MOYEN;
+	if (musique == MOYEN)
+	{
+		printf("La musique est a un volume MOYEN \n");
+	}
+
+
+
+
 	return 0;
 }
 
@@ -380,4 +405,12 @@ void chercheChaine()
 	{
 		printf("Premiere occurrence de test dans Texte de test : %s\n", suiteChaine2);
 	}
+}
+
+void initialiserCoordonnees(Coordonnees* point)
+{
+	(*point).x = 0; // écriture un peu longue
+	point->y = 0; // version courte avec une flèche réservée aux pointeurs (. = variable, -> = pointeur)
+
+
 }

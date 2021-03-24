@@ -5,6 +5,44 @@
 
 /* Contenu de votre fichier .h (autres include, prototypes, define...) */
 
+
+// Structures
+struct NomDeVotreStructure
+{
+    int variable1;
+    int variable2;
+    int autreVariable;
+    double nombreDecimal;
+};
+
+typedef struct Coordonnees Coordonnees; // crée un alias de structure
+struct Coordonnees
+{
+    int x;
+    int y;
+};
+
+typedef struct Personne Personne;
+struct Personne
+{
+    char nom[100];
+    char prenom[100];
+    char adresse[100];
+
+    int age;
+    int genre;
+};
+
+
+// Enumerations (~liste de valeurs possibles pour une variable)
+typedef enum Volume Volume;
+enum Volume
+{
+    //FAIBLE, MOYEN, FORT // le compilateur associe une valeur à chaque "mot" (FAIBLE = 0, MOYEN = 1, etc...)
+    FAIBLE = 10, MOYEN = 50, FORT = 100
+};
+
+
 // Prototypes des fonctions
 void test_boucle();
 int addition(int nbr1, int nbr2);
@@ -20,6 +58,7 @@ void chaineCaract();
 void demandeNom();
 void copieChaine();
 void concatChaine();
+void initialiserCoordonnees(Coordonnees *point);
 
 // Constante préprocesseur : va remplacer dans les code une "expression" par une valeur (donc pas pareil que "const int")
 #define LARGEUR_FENETRE 800
@@ -34,6 +73,11 @@ void concatChaine();
 
 #define MAJEUR(age) if (age >= 18) \
                     printf("Vous etes majeur\n");
+
+
+
+
+
 
 
 #endif
