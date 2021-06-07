@@ -1,0 +1,5 @@
+12:06:27 **** Rebuild of configuration Debug for project hello_eclipse ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello_eclipse.o" "..\\src\\hello_eclipse.c" 
+gcc -o hello_eclipse.exe "src\\hello_eclipse.o" 
+Info: Nothing to build for hello_eclipse
