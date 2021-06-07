@@ -1,0 +1,23 @@
+/*
+ ============================================================================
+ Name        : hello_eclipse.c
+ Author      : vtruong92
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("!!!Hello World!!!\n"); /* prints !!!Hello World!!! */
+	int age=0;
+	puts("How old are you? ");
+	fflush(stdout);
+	scanf("%d",&age);
+	puts("You are %d years old",age);
+	return 0;
+}

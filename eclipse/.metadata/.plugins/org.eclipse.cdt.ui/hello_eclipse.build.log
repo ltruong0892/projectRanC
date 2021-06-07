@@ -1,1 +1,7 @@
-Info: Nothing to build for hello_eclipse
+12:44:12 **** Incremental Build of configuration Debug for project hello_eclipse ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello_eclipse.o" "..\\src\\hello_eclipse.c" 
+gcc -o hello_eclipse.exe "src\\hello_eclipse.o" 
+
+12:44:12 Build Finished (took 285ms)
+

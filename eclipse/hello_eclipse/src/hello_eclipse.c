@@ -13,7 +13,7 @@
 #include <stdlib.h>
 
 int main(void) {
-	printf("!!!Hello World!!!\n"); /* prints !!!Hello World!!! */
+	printf("Hello World !\n"); /* prints !!!Hello World!!! */
 	int age=0;
 	printf("How old are you? ");
 	fflush(stdout);
