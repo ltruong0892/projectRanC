@@ -68,8 +68,6 @@ void demandeNom();
 void copieChaine();
 void concatChaine();
 void initialiserCoordonnees(Coordonnees *point);
-void ecritureFichier();
-void printTypeSize();
 
 // Constante préprocesseur : va remplacer dans les code une "expression" par une valeur (donc pas pareil que "const int")
 #define LARGEUR_FENETRE 800

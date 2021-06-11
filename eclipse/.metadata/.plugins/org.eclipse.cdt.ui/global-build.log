@@ -1,32 +1,10 @@
-Info: Nothing to build for hello_eclipse
-Info: Nothing to build for hello_eclipse
-12:36:35 **** Incremental Build of configuration Debug for project hello_eclipse ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello_eclipse.o" "..\\src\\hello_eclipse.c" 
-..\src\hello_eclipse.c: In function 'main':
-..\src\hello_eclipse.c:21:2: error: too many arguments to function 'puts'
-  puts("You are %d years old",age);
-  ^
-12:37:52 **** Incremental Build of configuration Debug for project hello_eclipse ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello_eclipse.o" "..\\src\\hello_eclipse.c" 
-gcc -o hello_eclipse.exe "src\\hello_eclipse.o" 
-12:38:25 **** Incremental Build of configuration Debug for project hello_eclipse ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello_eclipse.o" "..\\src\\hello_eclipse.c" 
-gcc -o hello_eclipse.exe "src\\hello_eclipse.o" 
-12:43:59 **** Incremental Build of configuration Debug for project hello_eclipse ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello_eclipse.o" "..\\src\\hello_eclipse.c" 
-gcc -o hello_eclipse.exe "src\\hello_eclipse.o" 
-12:44:12 **** Incremental Build of configuration Debug for project hello_eclipse ****
-Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\hello_eclipse.o" "..\\src\\hello_eclipse.c" 
-gcc -o hello_eclipse.exe "src\\hello_eclipse.o" 
-12:44:37 **** Incremental Build of configuration Debug for project basics ****
+17:42:11 **** Incremental Build of configuration Debug for project basics ****
 Info: Internal Builder is used for build
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\basics.o" "..\\src\\basics.cpp" 
 ..\src\basics.cpp: In function 'int main(int, char**)':
+..\src\basics.cpp:124:56: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long long unsigned int' [-Wformat=]
+  printf("Coordonnees : %d octets\n",sizeof(Coordonnees));
+                                                        ^
 ..\src\basics.cpp:57:9: warning: variable 'absolu' set but not used [-Wunused-but-set-variable]
   double absolu, dessus;
          ^
@@ -55,195 +33,46 @@ g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\basics.o" "..\\src\\basics.cpp"
   Coordonnees *point3a = NULL, *point3b = NULL;
                                 ^
 ..\src\basics.cpp: In function 'void test_boucle()':
-..\src\basics.cpp:194:6: warning: variable 'autorisation' set but not used [-Wunused-but-set-variable]
+..\src\basics.cpp:201:6: warning: variable 'autorisation' set but not used [-Wunused-but-set-variable]
   int autorisation;
       ^
 ..\src\basics.cpp: In function 'void tableaux()':
-..\src\basics.cpp:253:6: warning: unused variable 'tableau2' [-Wunused-variable]
+..\src\basics.cpp:260:6: warning: unused variable 'tableau2' [-Wunused-variable]
   int tableau2[5] = { 10,20 }; // on initialise les deux 1eres cases et les autres sont automatiquement mises à 0
       ^
-..\src\basics.cpp:254:6: warning: unused variable 'tableau3' [-Wunused-variable]
+..\src\basics.cpp:261:6: warning: unused variable 'tableau3' [-Wunused-variable]
   int tableau3[4] = { 0 }; // tout est initialisé à 0
       ^
-..\src\basics.cpp:265:6: warning: unused variable 'case2' [-Wunused-variable]
+..\src\basics.cpp:272:6: warning: unused variable 'case2' [-Wunused-variable]
   int case2 = tableau[1]; // Renvoie la valeur de la seconde case (la première case étant 0)
       ^
-..\src\basics.cpp:266:6: warning: unused variable 'case2b' [-Wunused-variable]
+..\src\basics.cpp:273:6: warning: unused variable 'case2b' [-Wunused-variable]
   int case2b = *(tableau + 1); // Identique : renvoie la valeur contenue dans la seconde case
       ^
-..\src\basics.cpp:272:6: warning: unused variable 'taille' [-Wunused-variable]
+..\src\basics.cpp:279:6: warning: unused variable 'taille' [-Wunused-variable]
   int taille = 5;
       ^
 ..\src\basics.cpp: In function 'void chaineCaract()':
-..\src\basics.cpp:304:7: warning: unused variable 'chaine0' [-Wunused-variable]
+..\src\basics.cpp:311:7: warning: unused variable 'chaine0' [-Wunused-variable]
   char chaine0[6]; // une chaine de caractère termine tjs par \0 à la fin (signifie la fin de la chaine pour le compilateur) donc il faut faire +1 à la taille
        ^
-g++ -o basics.exe "src\\basics.o" "src\\stdafx.o" 
-12:45:50 **** Incremental Build of configuration Debug for project basics ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\basics.o" "..\\src\\basics.cpp" 
-..\src\basics.cpp: In function 'int main(int, char**)':
-..\src\basics.cpp:57:9: warning: variable 'absolu' set but not used [-Wunused-but-set-variable]
-  double absolu, dessus;
-         ^
-..\src\basics.cpp:57:17: warning: variable 'dessus' set but not used [-Wunused-but-set-variable]
-  double absolu, dessus;
-                 ^
-..\src\basics.cpp:61:12: warning: unused variable 'NBR_DE_VIES_INITIALES' [-Wunused-variable]
-  const int NBR_DE_VIES_INITIALES = 5;
-            ^
-..\src\basics.cpp:69:7: warning: unused variable 'monPointeur' [-Wunused-variable]
-  int* monPointeur = NULL;
-       ^
-..\src\basics.cpp:101:14: warning: variable 'point' set but not used [-Wunused-but-set-variable]
-  Coordonnees point; // création d'une variable point de type Coordonnees via l'alias Coordonnees
-              ^
-..\src\basics.cpp:107:14: warning: unused variable 'point2' [-Wunused-variable]
-  Coordonnees point2 = { 0,0 };
-              ^
-..\src\basics.cpp:108:11: warning: unused variable 'utilisateur' [-Wunused-variable]
-  Personne utilisateur = { "","","",0,0 };
-           ^
-..\src\basics.cpp:111:15: warning: unused variable 'point3a' [-Wunused-variable]
-  Coordonnees *point3a = NULL, *point3b = NULL;
-               ^
-..\src\basics.cpp:111:32: warning: unused variable 'point3b' [-Wunused-variable]
-  Coordonnees *point3a = NULL, *point3b = NULL;
-                                ^
-..\src\basics.cpp: In function 'void test_boucle()':
-..\src\basics.cpp:196:6: warning: variable 'autorisation' set but not used [-Wunused-but-set-variable]
-  int autorisation;
-      ^
-..\src\basics.cpp: In function 'void tableaux()':
-..\src\basics.cpp:255:6: warning: unused variable 'tableau2' [-Wunused-variable]
-  int tableau2[5] = { 10,20 }; // on initialise les deux 1eres cases et les autres sont automatiquement mises à 0
-      ^
-..\src\basics.cpp:256:6: warning: unused variable 'tableau3' [-Wunused-variable]
-  int tableau3[4] = { 0 }; // tout est initialisé à 0
-      ^
-..\src\basics.cpp:267:6: warning: unused variable 'case2' [-Wunused-variable]
-  int case2 = tableau[1]; // Renvoie la valeur de la seconde case (la première case étant 0)
-      ^
-..\src\basics.cpp:268:6: warning: unused variable 'case2b' [-Wunused-variable]
-  int case2b = *(tableau + 1); // Identique : renvoie la valeur contenue dans la seconde case
-      ^
-..\src\basics.cpp:274:6: warning: unused variable 'taille' [-Wunused-variable]
-  int taille = 5;
-      ^
-..\src\basics.cpp: In function 'void chaineCaract()':
-..\src\basics.cpp:306:7: warning: unused variable 'chaine0' [-Wunused-variable]
-  char chaine0[6]; // une chaine de caractère termine tjs par \0 à la fin (signifie la fin de la chaine pour le compilateur) donc il faut faire +1 à la taille
-       ^
-g++ -o basics.exe "src\\basics.o" "src\\stdafx.o" 
-12:46:45 **** Incremental Build of configuration Debug for project basics ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\basics.o" "..\\src\\basics.cpp" 
-..\src\basics.cpp: In function 'int main(int, char**)':
-..\src\basics.cpp:57:9: warning: variable 'absolu' set but not used [-Wunused-but-set-variable]
-  double absolu, dessus;
-         ^
-..\src\basics.cpp:57:17: warning: variable 'dessus' set but not used [-Wunused-but-set-variable]
-  double absolu, dessus;
-                 ^
-..\src\basics.cpp:61:12: warning: unused variable 'NBR_DE_VIES_INITIALES' [-Wunused-variable]
-  const int NBR_DE_VIES_INITIALES = 5;
-            ^
-..\src\basics.cpp:69:7: warning: unused variable 'monPointeur' [-Wunused-variable]
-  int* monPointeur = NULL;
-       ^
-..\src\basics.cpp:101:14: warning: variable 'point' set but not used [-Wunused-but-set-variable]
-  Coordonnees point; // création d'une variable point de type Coordonnees via l'alias Coordonnees
-              ^
-..\src\basics.cpp:107:14: warning: unused variable 'point2' [-Wunused-variable]
-  Coordonnees point2 = { 0,0 };
-              ^
-..\src\basics.cpp:108:11: warning: unused variable 'utilisateur' [-Wunused-variable]
-  Personne utilisateur = { "","","",0,0 };
-           ^
-..\src\basics.cpp:111:15: warning: unused variable 'point3a' [-Wunused-variable]
-  Coordonnees *point3a = NULL, *point3b = NULL;
-               ^
-..\src\basics.cpp:111:32: warning: unused variable 'point3b' [-Wunused-variable]
-  Coordonnees *point3a = NULL, *point3b = NULL;
-                                ^
-..\src\basics.cpp: In function 'void test_boucle()':
-..\src\basics.cpp:196:6: warning: variable 'autorisation' set but not used [-Wunused-but-set-variable]
-  int autorisation;
-      ^
-..\src\basics.cpp: In function 'void tableaux()':
-..\src\basics.cpp:255:6: warning: unused variable 'tableau2' [-Wunused-variable]
-  int tableau2[5] = { 10,20 }; // on initialise les deux 1eres cases et les autres sont automatiquement mises à 0
-      ^
-..\src\basics.cpp:256:6: warning: unused variable 'tableau3' [-Wunused-variable]
-  int tableau3[4] = { 0 }; // tout est initialisé à 0
-      ^
-..\src\basics.cpp:267:6: warning: unused variable 'case2' [-Wunused-variable]
-  int case2 = tableau[1]; // Renvoie la valeur de la seconde case (la première case étant 0)
-      ^
-..\src\basics.cpp:268:6: warning: unused variable 'case2b' [-Wunused-variable]
-  int case2b = *(tableau + 1); // Identique : renvoie la valeur contenue dans la seconde case
-      ^
-..\src\basics.cpp:274:6: warning: unused variable 'taille' [-Wunused-variable]
-  int taille = 5;
-      ^
-..\src\basics.cpp: In function 'void chaineCaract()':
-..\src\basics.cpp:306:7: warning: unused variable 'chaine0' [-Wunused-variable]
-  char chaine0[6]; // une chaine de caractère termine tjs par \0 à la fin (signifie la fin de la chaine pour le compilateur) donc il faut faire +1 à la taille
-       ^
-g++ -o basics.exe "src\\basics.o" "src\\stdafx.o" 
-12:47:27 **** Incremental Build of configuration Debug for project basics ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\basics.o" "..\\src\\basics.cpp" 
-..\src\basics.cpp: In function 'int main(int, char**)':
-..\src\basics.cpp:57:9: warning: variable 'absolu' set but not used [-Wunused-but-set-variable]
-  double absolu, dessus;
-         ^
-..\src\basics.cpp:57:17: warning: variable 'dessus' set but not used [-Wunused-but-set-variable]
-  double absolu, dessus;
-                 ^
-..\src\basics.cpp:61:12: warning: unused variable 'NBR_DE_VIES_INITIALES' [-Wunused-variable]
-  const int NBR_DE_VIES_INITIALES = 5;
-            ^
-..\src\basics.cpp:69:7: warning: unused variable 'monPointeur' [-Wunused-variable]
-  int* monPointeur = NULL;
-       ^
-..\src\basics.cpp:101:14: warning: variable 'point' set but not used [-Wunused-but-set-variable]
-  Coordonnees point; // création d'une variable point de type Coordonnees via l'alias Coordonnees
-              ^
-..\src\basics.cpp:107:14: warning: unused variable 'point2' [-Wunused-variable]
-  Coordonnees point2 = { 0,0 };
-              ^
-..\src\basics.cpp:108:11: warning: unused variable 'utilisateur' [-Wunused-variable]
-  Personne utilisateur = { "","","",0,0 };
-           ^
-..\src\basics.cpp:111:15: warning: unused variable 'point3a' [-Wunused-variable]
-  Coordonnees *point3a = NULL, *point3b = NULL;
-               ^
-..\src\basics.cpp:111:32: warning: unused variable 'point3b' [-Wunused-variable]
-  Coordonnees *point3a = NULL, *point3b = NULL;
-                                ^
-..\src\basics.cpp: In function 'void test_boucle()':
-..\src\basics.cpp:196:6: warning: variable 'autorisation' set but not used [-Wunused-but-set-variable]
-  int autorisation;
-      ^
-..\src\basics.cpp: In function 'void tableaux()':
-..\src\basics.cpp:255:6: warning: unused variable 'tableau2' [-Wunused-variable]
-  int tableau2[5] = { 10,20 }; // on initialise les deux 1eres cases et les autres sont automatiquement mises à 0
-      ^
-..\src\basics.cpp:256:6: warning: unused variable 'tableau3' [-Wunused-variable]
-  int tableau3[4] = { 0 }; // tout est initialisé à 0
-      ^
-..\src\basics.cpp:267:6: warning: unused variable 'case2' [-Wunused-variable]
-  int case2 = tableau[1]; // Renvoie la valeur de la seconde case (la première case étant 0)
-      ^
-..\src\basics.cpp:268:6: warning: unused variable 'case2b' [-Wunused-variable]
-  int case2b = *(tableau + 1); // Identique : renvoie la valeur contenue dans la seconde case
-      ^
-..\src\basics.cpp:274:6: warning: unused variable 'taille' [-Wunused-variable]
-  int taille = 5;
-      ^
-..\src\basics.cpp: In function 'void chaineCaract()':
-..\src\basics.cpp:306:7: warning: unused variable 'chaine0' [-Wunused-variable]
-  char chaine0[6]; // une chaine de caractère termine tjs par \0 à la fin (signifie la fin de la chaine pour le compilateur) donc il faut faire +1 à la taille
-       ^
-g++ -o basics.exe "src\\basics.o" "src\\stdafx.o" 
+..\src\basics.cpp: In function 'void printTypeSize()':
+..\src\basics.cpp:450:43: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long long unsigned int' [-Wformat=]
+  printf("char : %d octects\n",sizeof(char));
+                                           ^
+..\src\basics.cpp:451:41: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long long unsigned int' [-Wformat=]
+  printf("int : %d octets\n", sizeof(int));
+                                         ^
+..\src\basics.cpp:452:43: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long long unsigned int' [-Wformat=]
+  printf("long : %d octets\n", sizeof(long));
+                                           ^
+..\src\basics.cpp:453:47: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long long unsigned int' [-Wformat=]
+  printf("double : %d octets\n", sizeof(double));
+                                               ^
+..\src\basics.cpp: In function 'void allocationMemoire()':
+..\src\basics.cpp:460:25: error: invalid conversion from 'void*' to 'int*' [-fpermissive]
+  memoireAllouee = malloc(sizeof(int)); // la fonction malloc inscrit dans notre pointeur ld'adresse qui a été reservée
+                         ^
+..\src\basics.cpp:485:19: error: invalid conversion from 'void*' to 'int*' [-fpermissive]
+   ageAmis = malloc(nombreDAmis * sizeof(int)); // on alloue la mémoire pour le tableau
+                   ^

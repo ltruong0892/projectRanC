@@ -500,7 +500,7 @@ void allocationMemoire()
 			printf("%d ans\n", ageAmis[i]);
 		}
 		// On libère la mémoire allouée
-		free(ageAmis);
+		free(ageAMis);
 
 	}
 

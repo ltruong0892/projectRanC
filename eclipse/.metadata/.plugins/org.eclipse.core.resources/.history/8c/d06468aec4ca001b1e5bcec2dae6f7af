@@ -119,10 +119,7 @@ int main(int argc, char *argv[])
 		printf("La musique est a un volume MOYEN \n");
 	}
 
-	//ecritureFichier();
-	printTypeSize();
-	printf("Coordonnees : %d octets\n",sizeof(Coordonnees));
-
+	ecritureFichier();
 
 
 
@@ -427,88 +424,22 @@ void initialiserCoordonnees(Coordonnees* point)
 void ecritureFichier()
 {
 	FILE* fichier = NULL;
-	fichier = fopen("test.txt","r+"); // fichier texte dans le même dossier que le .exe
+	char nomFichier[] = "test.txt";
+	fichier = fopen(nomFichier,"r+");
 
 	if (fichier != NULL)
 	{
 		// On peut lire et écrire dans le fichier
 		//fputc('A',fichier); // écrit UN seul caractère
-		//fprintf(fichier,"Ceci est le fichier %c\n",nomFichier);
+		fprintf(fichier,"Ceci est le fichier %c\n",nomFichier);
 		fputs("Salut les Zeros\nComment allez vous ?",fichier);
 		fclose(fichier);
 	}
 	else
 	{
 		// On affiche un message d'erreur si on veut
-		printf("Impossible d'ouvrire le fichier");
+		printf("Impossible d'ouvrire le fichier %c",nomFichier);
 	}
 
 }
-
-void printTypeSize()
-{
-	printf("char : %d octects\n",sizeof(char));
-	printf("int : %d octets\n", sizeof(int));
-	printf("long : %d octets\n", sizeof(long));
-	printf("double : %d octets\n", sizeof(double));
-}
-
-void allocationMemoire()
-{
-	//// Exemple simple avec une variable
-	int* memoireAllouee = NULL; // on crée un pointeur sur int
-	memoireAllouee = malloc(sizeof(int)); // la fonction malloc inscrit dans notre pointeur ld'adresse qui a été reservée
-	if (memoireAllouee == NULL) // si l'allocation a échoué
-	{
-		exit(0); // On arrête immédiatement le programme
-	}
-	// On peut continuer le programme normalement sinon
-
-	// Utilisation de la mémoire
-	printf("Vous avez quel age deja ? ");
-	fflush(stdout);
-	scanf("%d", memoireAllouee);
-	printf("Ah oui c'est vrai vous avez %d ans\n", *memoireAllouee);
-
-
-	free(memoireAllouee); // on n'a plus besoin de la mémoire, on la libère
-
-
-	//// Autre exemple avec un tableau à taille inconnue
-	int nombreDAmis = 0, i = 0;
-	int* ageAmis = NULL; // ce pointeur va servir de tableau après l'appel du malloc
-	// on demande le nombre d'amis à l'utilisateur
-	printf("Combien d'amis avez vous ?");
-	scanf("%d",&nombreDAmis);
-	if (nombreDAmis > 0) // Il faut qu'il ait au moins un amis
-	{
-		ageAmis = malloc(nombreDAmis * sizeof(int)); // on alloue la mémoire pour le tableau
-		if (ageAmis == NULL) // on vérifie si l'allocation a marché
-		{
-			exit(0); // on arrete tout
-		}
-		// On demande l'âge des amis un à un
-		for (i=0; i<nombreDAmis; i++)
-		{
-			printf("Quel age a l'ami numero %d ? ",i+1);
-			scanf("%d",&ageAmis[i]);
-		}
-		// On affiche les ages stockés un à un
-		printf("\n\nVos amis ont les ages suivants :\n");
-		for (i=0 ; i<nombreDAmis ; i++);
-		{
-			printf("%d ans\n", ageAmis[i]);
-		}
-		// On libère la mémoire allouée
-		free(ageAmis);
-
-	}
-
-
-
-}
-
-
-
-
 
